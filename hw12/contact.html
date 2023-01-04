@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contact</title>
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/basic.css">
+<style>
+	#container{padding: 10px}
+</style>
+<script src="assets/js/validation.js"></script>
+</head>
+<body>
+	<div id="page-inner">
+		<ul class="nav nav-tabs">
+			<li role="presentation"><a href="index.html">Home</a></li>
+			<li role="presentation"><a href="school.html">School</a></li>
+			<li role="presentation"><a href="work.html">Work</a></li>
+			<li role="presentation" class="active"><a href="contact.html">Contact</a></li>
+		</ul>
+		<div id="container">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Contact Form</div>
+				<div class="panel-body">
+					
+					<form name="myForm" method="post" action="">
+						<div class="form-group">
+							<label>First Name:</label>
+							<input class="form-control" name="fName" type="text" id="fName" onblur="vFName(this.value);">
+							<p class="help-block" id="fNameHelp"></p>
+						</div>
+						<div class="form-group">
+							<label>Last Name:</label>
+							<input class="form-control" name="lName" type="text" id="lName" onblur="vLName(this.value);">
+							<p class="help-block" id="lNameHelp"></p>
+						</div>
+						<div class="form-group">
+							<label>Email:</label>
+							<input class="form-control" name="email" type="text" id="email" onblur="vEmail(this.value);">
+							<p class="help-block" id="emailHelp"></p>
+						</div>
+						<div class="form-group">
+							<label>Phone Number:</label>
+							<input class="form-control" name="num" type="text" id="num" onblur="vNum(this.value);">
+							<p class="help-block" id="numHelp"></p>
+						</div>
+						<div class="form-group">
+							<label>DOB:</label>
+							<input class="form-control" name="dob" type="text" id="dob" onblur="vDOB(this.value)">
+							<p class="help-block" id="dobHelp"></p>
+						</div>
+						<div class="form-group">
+							<label>Peferred Contact Method::</label>
+							<select id="funct" name="funct" onchange="vPCM(this.value)">
+								<option>---</option>
+								<option value="email">Email</option>
+								<option value="phonenumber">Phone Number</option>
+							</select>
+							<p class="help-block" id="pcmHelp"></p>
+						</div>
+						<div class="form-group">
+							<label>Comment:</label>
+							<br>
+							<textarea name="comment" rows="10" cols="50" id="comment" onblur="vComment(this.value);"></textarea>
+							<p class="help-block" id="commentHelp"></p>
+						</div>
+						<hr>
+						<button id="submit" class="btn btn-block btn-success" type="submit" onclick="return validateForm()">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<?php
+$firstName=$_POST['fName'];
+$lastName=$_POST['lName'];
+$email=$_POST['email'];
+$num=$_POST['num'];
+$dob=$_POST['dob'];
+$pcm=$_POST['funct'];
+$comment=$_POST['comment'];
+echo "<div>First Name: $firstName</div>";
+echo "<div>Last Name: $lastName</div>";
+echo "<div>Email: $email</div>";
+echo "<div>Phone Number: $num</div>";
+echo "<div>Date of Birth: $dob</div>";
+echo "<div>Perferred Contact Method: $pcm</div>";
+echo "<div>Comment(s): $comment</div>";
+?>
+
