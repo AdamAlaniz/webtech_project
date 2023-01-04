@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+.navButton {
+	background-color: black;
+	text-align: center;
+	text-color: #FFFFFF;
+	border-radius: 25px;
+	padding: 10px;
+	margin: 10px;
+}
+.navBar {
+	padding: 25px;	
+}
+a:link, a:visited{
+	color: blue;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.emailColor {
+	color: blue;
+	text-decoration: none;
+}
